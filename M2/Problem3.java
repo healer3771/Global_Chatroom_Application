@@ -1,7 +1,7 @@
 //Name: Qadeer Ahmad
 //UCID: qa9 
 //Date: 25/09/2023
-//I am atteming to find 
+//I am atteming to get the output the print all then negative value to positve with their datatypes
 import java.util.Arrays;
 public class Problem3 {
     public static void main(String[] args) {
