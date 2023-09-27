@@ -1,7 +1,7 @@
 //Name: Qadeer Ahmad
 //UCID: qa9 
 //Date: 25/09/2023
-//I am atteming to find 
+//I am atteming to get the output with two rounded decimal places.
 import java.util.Arrays;
 
 public class Problem2 {
