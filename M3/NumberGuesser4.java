@@ -1,5 +1,5 @@
 //Qadeer Ahmad
-//UCID: qa9..
+//UCID: qa9
 //Date: 10/02/2023
 import java.io.File;
 import java.io.FileNotFoundException;
