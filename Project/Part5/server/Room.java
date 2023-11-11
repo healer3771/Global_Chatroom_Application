@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import Project.Part5.common.Constants;
 
@@ -192,9 +194,12 @@ public class Room implements AutoCloseable {
             // it was a command, don't broadcast
             return;
         }
+        //converter mark down to HTML message is being called before sending the message
+        message = convertMarkdownToHTML(message);
 		//Qadeer Ahmad
 		//Ucid: qa9
 		//Date: 11/13/2023
+        //check if the message starts with "/roll" "/flip and runs the flip or roll method to give the final answers"
         if(message.startsWith("/")){
             String text = message.split(" ")[0];
             if (text.equals("/roll") && (message.split(" ").length == 2)){
@@ -210,9 +215,7 @@ public class Room implements AutoCloseable {
                 }
             }
             else if(text.equals("/flip")){
-                if(message.equals("/flip")){ //must only say flip
-                    message = flip();
-                }  
+                    message = "Flip the coin and got " + flip() +" in room " + getName();
             }
 		}
         long from = sender == null ? Constants.DEFAULT_CLIENT_ID : sender.getClientId();
@@ -231,30 +234,72 @@ public class Room implements AutoCloseable {
 	//Date: 11/13/2023
 	//Implementing the coin toss feature which flip the coin and come on 0 which is heads or 1 which is tails
     private String flip(){
-        Random r = new Random();
-        int chance = r.nextInt(2);
-        if (chance == 1) {
-           return "tails";
-        } else {
-           return"heads";
-        }  
+        // Generate random 0 or 1 for heads/tails
+        int result = (int)(Math.random() * 2);
+        // Map result to heads/tails
+        String coinSide = result == 0 ? "heads" : "tails"; 
+        return coinSide;  
     }
+
+
+
+    
     //Qadeer Ahmad
 	//Ucid: qa9
 	//Date: 11/13/2023
 	////Implementing the roll dice feature which dice the roll according to the given values
     private String roll(int num,int sides){
-        int result;
         String finalresult="";
-        Random ran= new Random();
-        //between
-        for (int i = 0;i<num;i++){
-            result = ran.nextInt(sides);
-            int currdie = i+1;
-            finalresult= finalresult + "Die" + currdie + "=" + result + " ";
-        }
+        int total = 0;
+        for(int i=0; i< num; i++){
+            total += (int)(Math.random() * sides) + 1; 
+            finalresult = "rolled the dice and got " + total + " in room " + getName();
+         }
         return finalresult;
     }
+
+        //Qadeer Ahmad
+	    //Ucid: qa9
+	    //Date: 11/13/2023
+        //the code transforms specific markdown-style formatting in the input message into equivalent HTML tags, providing a way to convert simple markdown to HTML.
+    private String convertMarkdownToHTML(String inputMessage){
+        String regexPattern = "(\\*([^*]){1,}\\*|\\_([^_]){1,}\\_|~([^~]){1,}~|\\&[r].{1,}\\&[r]|\\&[g].{1,}\\&[g]|\\&[b].{1,}\\&[b])";
+    
+        Pattern customPattern = Pattern.compile(regexPattern);
+        Matcher customMatcher = customPattern.matcher(inputMessage);
+        String processedMessage = inputMessage;
+        String repTag = "";
+    
+        while(customMatcher.find()){
+            String trimmedContent = customMatcher.group().substring(1, customMatcher.group().length()-1);
+            if (customMatcher.group().startsWith("*")){
+                repTag = "<b>" + trimmedContent + "</b>";
+            }
+            else if(customMatcher.group().startsWith("_")){
+                repTag = "<i>" + trimmedContent + "</i>";
+            }
+            else if(customMatcher.group().startsWith("~")){
+                repTag = "<u>" + trimmedContent + "</u>";
+            }
+            else if(customMatcher.group().startsWith("&")){
+                trimmedContent = customMatcher.group().substring(2, customMatcher.group().length()-2);
+                // Color
+                if(customMatcher.group().startsWith("&r")){
+                    repTag = "<span style=\"color:red\">" + trimmedContent + "</span>";
+                }
+                else if(customMatcher.group().startsWith("&g")){
+                    repTag = "<span style=\"color:green\">" + trimmedContent + "</span>";
+                }
+                else if(customMatcher.group().startsWith("&b")){
+                    repTag = "<span style=\"color:blue\">" + trimmedContent + "</span>";
+                }
+            }
+            processedMessage = customMatcher.replaceFirst(repTag);
+            customMatcher = customPattern.matcher(processedMessage);
+            }
+        return processedMessage;
+    }
+    
 
 
     protected synchronized void sendConnectionStatus(ServerThread sender, boolean isConnected) {
