@@ -94,6 +94,6 @@
 </table></td></tr>
 <table><tr><td> <em>Deliverable 7: </em> Misc </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://user-images.githubusercontent.com/54863474/211707773-e6aef7cb-d5b2-4053-bbb1-b09fc609041e.png"></td></tr>
 <tr><td><table><tr><td> <em>Sub-Task 1: </em> Pull request from milestone3 to main</td></tr>
-<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/healer3771/qa9-it114-003/pull/16">https://github.com/healer3771/qa9-it114-003/pull/16</a> </td></tr>
+<tr><td> <a rel="noreferrer noopener" target="_blank" href="https://github.com/healer3771/qa9-it114-003/pull/17">https://github.com/healer3771/qa9-it114-003/pull/16</a> </td></tr>
 </table></td></tr>
 <table><tr><td><em>Grading Link: </em><a rel="noreferrer noopener" href="https://learn.ethereallab.app/homework/IT114-003-F23/it114-chatroom-milestone3/grade/qa9" target="_blank">Grading</a></td></tr></table>
