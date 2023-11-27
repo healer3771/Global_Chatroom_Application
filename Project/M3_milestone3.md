@@ -16,7 +16,8 @@
 <tr><td> <em>Caption:</em> <p>First User &quot;James&quot; Entering in the lobby room<br></p>
 </td></tr>
 </table></td></tr>
-<tr><td> <em>Sub-Task 2: </em> Briefly explain the code for each step of the process</td></tr>
+<tr><td> <em>Sub-Task 2: </em> Briefly 
+explain the code for each step of the process</td></tr>
 <tr><td> <em>Response:</em> <p>1- Host and port shown:<br><div>The client UI creates an instance of the class<br>ConnectionPanel, which extends Jpanel, and clicks the Jbutton &quot;next&quot; to establish a connection<br>with the server. The functions getHost and getPort (used in the connect function<br>in ClientUI to connect the client itself) retrieve the port value and host<br>value from the text field and provide them to the user interface.</div><div><br></div>2- Username<br>entry by the client:<br><div>When the user clicks the &quot;connect&quot; Jbutton, an instance of<br>the class UserInputPanel (which extends Jpanel) is generated, collects the username from the<br>textfield, and connects them to the lobby.</div><div><br></div><div>3- The client enters the room:</div>On the<br>left side of the screen, the userListPanel displays the people who have entered<br>the room. As users leave and return the room, it clears and adds<br>them.<br>As display messages in HTML format are transmitted, the chatPanel listens for them.<br><br></p><br></td></tr>
 </table></td></tr>
 <table><tr><td> <em>Deliverable 2: </em> Chatroom view </td></tr><tr><td><em>Status: </em> <img width="100" height="20" src="https://user-images.githubusercontent.com/54863474/211707773-e6aef7cb-d5b2-4053-bbb1-b09fc609041e.png"></td></tr>
