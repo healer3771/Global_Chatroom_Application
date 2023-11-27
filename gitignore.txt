@@ -28,7 +28,7 @@ hs_err_pid*
 #############################
 ## Class Specifics
 #############################
-config.*
+config.*k
 *.log
 *.conf
 
