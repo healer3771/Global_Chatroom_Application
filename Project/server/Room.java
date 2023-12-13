@@ -240,7 +240,7 @@ public class Room implements AutoCloseable {
             }
         //Qadeer Ahmad
 	    //Ucid: qa9
-	    //Date: 11/26/2023
+	    //Date: 12/13/2023
         //Checking the coming message to see if starts with /mute and then check the blocklist with the given user and block that user
             else if(text.equals("/mute") && (message.split(" ").length==2)){
                 String blockeduser = message.split(" ")[1];
@@ -286,6 +286,9 @@ public class Room implements AutoCloseable {
         
     }
 
+    //Qadeer Ahmad
+	//Ucid: qa9
+	//Date: 12/13/2023
     //function for to get Client ID
     protected long getClientIdFromName(String name){
         long id;

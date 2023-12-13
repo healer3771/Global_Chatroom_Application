@@ -292,7 +292,7 @@ public class ChatPanel extends JPanel {
         LocalDateTime now = LocalDateTime.now();  
         DateTimeFormatter format = DateTimeFormatter.ofPattern("_dd-MM-yyyy_HH-mm-ss");  
         String formatDateTime = now.format(format);  
-        String filename="Project/Project/client/chatlogs/chat"+formatDateTime+".html";
+        String filename="Project/client/chatlogs/chat"+formatDateTime+".html";
         return filename;
     }
 }
