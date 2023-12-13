@@ -47,6 +47,9 @@ public class ServerThread extends Thread {
             e.printStackTrace();
         }
     }
+    //UCID: qa9
+    //Date: 12/13/2023
+    //blocklist code
     private void updateBlockList(){
         FileWriter blockfile;
         try {
@@ -60,12 +63,15 @@ public class ServerThread extends Thread {
     }
     private String myfilename(){
         String name=getClientName();
-        String filename="Project/Project/server/blocklists/"+name+".txt";
+        String filename="Project/server/blocklists/"+name+".txt";
         return filename;
     }
     public ArrayList<String> getBlockedList(){
         return blockedlist;
     }
+    //UCID: qa9
+    //Date: 12/13/2023
+    //blocklist code
     public void block(String clientname){
         if(!blockedlist.contains(clientname)){
             blockedlist.add(clientname);
