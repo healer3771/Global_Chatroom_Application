@@ -32,4 +32,4 @@ Upon success mute/unmute, the sender should receive a confirmation of the action
 Any time a message would be received (i.e., normal messages or private messages) the sender’s name will be compared against the receiver’s mute list
 Note: The mute list won’t be exposed directly, there should be a method on the ServerThread that takes the name and returns a boolean about whether or not the person is muted
 If the user is muted, the receive must not be sent the message (i.e., they get skipped)
-You must log in the terminal that the message was skipped due to being muted, but no message should be sent in this regard
+You must log in the terminal that the message was skipped due to being muted, but no message should be sent in this regard 
