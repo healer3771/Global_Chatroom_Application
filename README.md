@@ -1,5 +1,23 @@
 # qa9-it114-003
-Name: Qadeer Ahmad
-Course/Section: IT114-003
-
-Info: Hello everyone, my name is Qadeer Ahamd. Its been almost 4 year I moved in America from the country I was born in. I had always my interest in new computer related technology and its new functions so I take the major of IT. I always have good experience in NJIT and I love it. My hobbies are watching anime, playing cricket as my favorite sports and soccer, volleyball etc, I also love reading comics and books with a lot of suspense and action. By taking this class I hope increase my knowledge on networking and can have deep understanding in this field and I also want to have a hand on experience on the networking.
+Milestone 1:
+• Server can be started via command line and listen for connections
+  ‣ Related output should be present about incoming port
+• Client can be started via command line
+  ‣ Related output should mention that the client is waiting for input
+• Client can connect to the running Server
+  ‣ A client name must be set first with /name
+  ‣ Client connects via the /connect command
+  ‣ Related output should show successful connection
+• Server should be able to allow more than one Client to be connected at once
+• Server will implement a concept of “Rooms” where the first room is labeled as “Lobby”
+• Clients can create new Rooms once connected
+  ‣ A “X left the room” message will be shown upon leaving the Room
+  ‣ A “X joined the room” message will be shown upon joining the Room
+• Client can send messages to the Server-side
+  ‣ Messages will be relayed to all connected Clients in the same Room
+  ‣ Messages will not be relayed across Rooms
+  ‣ Each message will have an identifier of who the message was from (i.e., Client Name)
+• Clients can disconnect and reconnect without crashing the Server
+  ‣ The Server terminating should not cause the the Clients to terminate as well (just disconnect)
+  ‣ Clients should receive a disconnected message
+  ‣ Clients should be able to reconnect when the Server comes back online
