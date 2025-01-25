@@ -1,5 +1,21 @@
-# qa9-it114-003
-Name: Qadeer Ahmad
-Course/Section: IT114-003
+# Global Chatroom Application
+Client can export the chat history of  their current session (client-side)
 
-Info: Hello everyone, my name is Qadeer Ahamd. Its been almost 4 year I moved in America from the country I was born in. I had always my interest in new computer related technology and its new functions so I take the major of IT. I always have good experience in NJIT and I love it. My hobbies are watching anime, playing cricket as my favorite sports and soccer, volleyball etc, I also love reading comics and books with a lot of suspense and action. By taking this class I hope increase my knowledge on networking and can have deep understanding in this field and I also want to have a hand on experience on the networking.
+Provided a button on the UI that will trigger this action
+
+Usage a StringBuilder to temporarily consolidate the messages during the export process and dump the content to a unique filename (hint: use a format of date/time in the file name)
+Client’s mute list persist across sessions (server-side)
+
+Upon connecting, use the username to load the mute file for that person (i.e., bob.txt)
+
+Upon the mute list changing, dump the current mute list to the file based on the mute list owner’s client name (i.e., bob.txt)
+
+Clients will receive a message when they get muted/unmuted by another user
+(i.e., Bob muted you or Bob unmuted you)
+
+The message only being sent if the user is newly added or removed from the mute list
+I.e., /mute Bob followed by a /mute Bob should only send one message because Bob can only be muted once until they’re unmuted. Similarly for /unmute Bob
+
+The user list on the Client-side should update per the status of each user
+
+Muted users appear grayed out (or similar indication of your choosing)
